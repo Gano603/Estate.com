@@ -1,0 +1,90 @@
+.display{
+    margin: 0 7vw;
+    // border: 1px solid red;
+    >h1{
+        font-size: 2vw;
+        margin: 1.2vh 0;
+    }
+    >a{
+        // border: 1px solid red;
+        text-decoration: none;
+        color: black;
+        font-size: 1.3vw;
+        margin-left: 1vw;
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover{
+            margin-right: 1vw;
+        }
+    }
+    >span{
+        font-size: 1.3vw;
+    }
+}
+
+    .option-button{
+        font-size: 1.5vw;
+        padding: 0.5vw;
+        margin: 1vh 0.5vw;
+        background-color: white;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: 0.5s;
+        &:focus{
+            background-color: rgb(214, 214, 214);
+        }
+    }
+
+.card-display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-button {
+    height: 4vh;
+    width: 2vw;
+    border-radius: 25px;
+    font-size: 1vw;
+    font-weight: 600;
+    padding: 0.5vw;
+    background-color: white;
+    border: 1.5px solid black;
+    cursor: pointer;
+    transition: 0.5s;
+    &:first-child:hover {
+        transform: translateX(-0.5vw);
+      } 
+    &:last-child:hover {
+        transform: translateX(0.5vw);
+      }
+  }
+
+  ///////////////////////////////////MEDIA QUERIES/////////////////////////////////
+  
+  @media(max-width:1000px){
+    .option-button{
+        font-size: 1.8vw;
+    }
+  }
+
+  @media (max-width:850px){
+    .option-button{
+        font-size: 2.8vw;
+        margin: 1vh 1vw;
+        padding: 0.7vh;
+    }
+  }
+
+  @media (max-width:500px){
+    .option-button{
+        font-size: 1.8vh;
+    }
+}
+
+@media(min-width:1200px){
+    .option-button{
+        font-size: 1vw;
+    }
+}
+  

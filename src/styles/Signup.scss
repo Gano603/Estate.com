@@ -1,0 +1,29 @@
+
+
+.signup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    >div{
+        width: max-content;
+        border-radius: 25px;
+        border: 1px solid black;
+        >div{
+            margin: 10vh 11vw 5vh 3vw;
+            >button{
+                padding: 0.5vh 0.5vw;
+                font-size: 2.2vh;
+                margin: 0 1vw;
+                border: none;
+                background-color: white;
+                cursor: pointer;
+                border-bottom: 2.5px solid gray;
+                transition: 0.5s;
+                &:hover{
+                    border-bottom: 0;
+                    background-color: gray;
+                }
+            }
+        }
+}
+}

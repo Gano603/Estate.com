@@ -1,0 +1,127 @@
+// *{
+//     border: 1px solid red;
+// }
+
+.title-poster{
+    background-color: rgb(247, 107, 107);
+    color: white;
+    margin: 2vh 6vw;
+    padding: 0 2vw;
+    border-radius: 25px;
+    display: flex;
+    >div{
+        >h1{
+            font-size: 2.8vw;
+            margin: 10vh 0 1vh 0;
+        }
+        >p{
+            font-size: 1.2vw;
+        }
+        >img{
+            width: 15vw;
+            height: 40vh;
+        }
+        &:nth-child(odd){
+            width: 85%;
+        }
+    }
+}
+
+.content-box{
+    margin: 2vh 6vw;
+    padding: 0 2vw;
+    border: 1px solid black;
+    border-radius: 25px;
+    display: flex;
+    >div{
+        width: 50%;
+        >div{
+            margin: 4vh 0;
+            >h2{
+                margin-bottom: 1.6vh;
+                font-weight: 600;
+            }
+            >div{
+                >button{
+                    margin: 1.1vh 0.5vw;
+                    font-size: 1.1vw;
+                    padding: 0.5vh 0.8vw;
+                    border-radius: 15px;
+                    background-color: white;
+                    transition: 0.5s;
+                    cursor: pointer;
+                    &:focus{
+                        border-color: rgb(247, 107, 107);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.input-div{
+    height: 5.5vh;
+    width: 27vw;
+    background-color: rgb(231, 230, 230);
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    >input{
+        height: calc(inherit-2px);
+        width: 100%;
+        background-color: inherit;
+        border: none;
+        outline: none;
+        font-size: 1.2vw;
+        font-weight: 500;
+        padding: 0.1vh 0.6vw;
+    }
+    >svg{
+        font-size: 1.4vw;
+        color: gray;
+        margin: 0 0.5vw;
+    }
+}
+
+.off{
+    display: none;
+}
+
+.input-pkr{
+    color: rgb(252, 0, 42);
+    font-size: 1.4vw;
+    font-weight: 500;
+    margin-right: 20px;
+}
+
+.file-input{
+    background-color: rgb(231, 230, 230);
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 24vw;
+    padding: 5vh 0;
+    >h2{
+        font-size: 1.6vw;
+    }
+    >svg{
+        font-size: 4vw;
+        fill: rgb(252, 0, 42);
+    }
+}
+
+.personal-content-box{
+    margin: 3vh 2vw;
+    padding: 3vh 2vw;
+    border-radius: 25px;
+    border: 1px solid black;
+    width: max-content;
+    height: max-content;
+    >h2{
+        font-size: 1.6vw;
+        text-decoration: underline;
+    }
+}

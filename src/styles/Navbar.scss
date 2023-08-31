@@ -1,0 +1,117 @@
+*{
+    margin: 0;padding: 0;
+    // border: 1px solid red;
+}
+.navbar{
+    height: 14vh;
+    padding: 0 3vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid rgb(170, 170, 170);
+    >div{
+        display: flex;
+        align-items: center;
+        >button{
+            padding: 1vh 1vw;
+            font-size: 2.5vh;
+            width: max-content;
+            cursor: pointer;
+            border-radius: 25px;
+            background-color: rgb(223, 219, 219);
+            color: rgb(82, 82, 82);
+            font-weight: 600;
+            border: none;
+            &:hover{
+                background-color: white;
+            }
+        }
+        >h2{
+            color: grey;
+            font-size: 4.3vh;
+            margin: 0 1vw;
+        }
+        >img{
+            height: 10vh;
+            width: 5vw;
+        }
+    }
+}
+.text-red{
+    color: red;
+}
+.title-box{
+    margin-left: 4vw;
+    cursor: pointer;
+}
+
+.menu_nav{
+    width: 100%;
+    >div{
+        >a{
+            text-decoration: none;
+            color: gray;
+            font-size: 3vh;
+            margin: 0 2vw;
+            font-weight: 600;
+        }
+    }
+}
+
+.menu-icon{
+    position:absolute;
+    right: 3vw;
+    font-size: 3.7vh;
+    cursor: pointer;
+}
+
+///////////////////////////MEDIA QUERIES///////////////////////////////
+
+@media (max-width:920px){
+    .responsive-off-700px{
+        display: none;
+    }
+    .menu_nav{
+        width: 0;
+    }
+    .navbar{
+        justify-content: center;
+        height: 7vh;
+        >div{
+            >img{
+                height: 4.5vh;
+                width: 7vw;
+            }
+            >h2{
+                font-size: 3.5vh;
+            }
+        }
+    }
+    .vert-menu{
+        position: absolute;
+        width: 100%;
+        height: max-content;
+        background-color: white;
+        display: flex;
+        justify-content: space-around;
+        border: 1px solid gray;
+        >a{
+            text-align: center;
+            text-decoration: none;
+            width: 15%;
+            color: gray;
+            font-size: 2vh;
+            margin: 1vh 2vw;
+            font-weight: 600;
+        }
+    }
+    
+
+}
+
+@media (min-width:920px) {
+    .responsive-on-700px{
+        display: none;
+    }
+}

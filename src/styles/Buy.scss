@@ -1,0 +1,61 @@
+hr{
+    width: 100%;
+}
+
+.top-poster{
+    height: 30vh;
+    background-image: url("/src/assets/img/shutterstock_407554567.jpg");
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0 ,0.4);
+    }
+}
+
+.display{
+    margin: 1.2vh 5vw;
+    >h1{
+        font-size: 2vw;
+    }
+}
+
+.loadmore_option{
+    display: flex;
+    justify-content: center;
+}
+
+.Display-searchbar{
+    top: 20vh;
+    z-index: 2;
+}
+
+/////////////////////////////////MEDIA QUERIES///////////////////////////////////////////
+
+@media (max-width:850px){
+    .display{
+        >h1{
+            font-size: 6vw;
+        }
+    }
+    .filter-button{
+        >button{
+            padding: 0.7vh;
+            display: flex;
+            align-items: center;
+            >span{
+                margin: 0 0.5vw;
+            }
+        }
+    }
+}
+
+@media (max-width:500px){
+    .filter-button{
+        >button{
+            font-size: 1.8vh;
+        }
+    }
+}

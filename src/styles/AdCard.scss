@@ -1,0 +1,172 @@
+// *{
+//   border: 1px solid red;
+// }
+
+.ad-card{
+  margin: 2vh 0;
+  padding: 2vh 1vw;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 25px;
+  border: 1px solid black;
+  background-color: whitesmoke;
+  >div{
+    >img{
+        border-radius: 25px;
+        height: 28vh;
+        width: 20vw;
+      }
+    }
+}
+
+.details{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0 4vw;
+  >p{
+    font-size: 2vh;
+    color: rgb(71, 71, 71);
+  }
+  >h2{
+    font-size: 4vh;
+  }
+  >h3{
+    font-size: 2.5vh;
+    margin: 0.5vh 0;
+  }
+  >h5{
+    font-size: 1.5vh;
+    margin-bottom: 0.3vh;
+  }
+  >hr{
+    width: 100%;
+  }
+  >.ad-options{
+    display: flex;
+    justify-content: space-around;
+    padding: 1vh 0;
+    >div{
+      display: flex;
+      align-items: center;
+      font-size: 2vh;
+      >svg{
+        font-size: 3vh;
+        margin: 0 0.5vw;
+      }
+    }
+  }
+}
+
+.features{
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 2vh;
+  >span{
+    margin: 0.2vh 0;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    >svg {
+      font-size: 2vh;
+      fill: green;
+      margin: 0 0.5vw;
+    }
+  }
+}
+
+////////////////////////////////MEDIA QUERIES///////////////////////////////////////
+
+@media(max-width:850px){
+  .ad-card{
+    align-items: center;
+    >div{
+      >img{
+          height: 20vw;
+          width: 28vw;
+        }
+      }
+  }
+  .details{
+    >p{
+      font-size: 1.6vh;
+      color: rgb(71, 71, 71);
+    }
+    >h2{
+      font-size: 3vh;
+    }
+    >h3{
+      font-size: 2vh;
+      margin: 0;
+    }
+    >h5{
+      font-size: 1.3vh;
+      margin-bottom: 0.3vh;
+    }
+    >.ad-options{
+      >div{
+        font-size: 1.7vh;
+        >svg{
+          font-size: 2vh;
+          margin: 0 0.5vw;
+        }
+      }
+    }
+  }
+  .features{
+    font-size: 1.5vh;
+    >span{
+      >svg {
+        font-size: 1.5vh;
+      }
+    }
+  }
+}
+
+@media(max-width:500px){
+  .ad-card{
+    flex-direction: column;
+    align-items: center;
+    >div{
+      >img{
+          height: 34vw;
+          width: 55vw;
+        }
+      }
+  }
+  .details{
+    >p{
+      font-size: 1.6vh;
+      color: rgb(71, 71, 71);
+    }
+    >h2{
+      font-size: 2.5vh;
+    }
+    >h3{
+      font-size: 1.7vh;
+      margin: 0;
+    }
+    >h5{
+      font-size: 1.3vh;
+      margin-bottom: 0.3vh;
+    }
+    >.ad-options{
+      >div{
+        font-size: 1.7vh;
+        >svg{
+          font-size: 2vh;
+          margin: 0 0.5vw;
+        }
+      }
+    }
+  }
+  .features{
+    font-size: 1.5vh;
+    >span{
+      >svg {
+        font-size: 1.5vh;
+      }
+    }
+  }
+}

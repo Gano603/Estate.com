@@ -1,0 +1,29 @@
+.display-card{
+    margin: 1vh 1vw;
+    border: 1px solid rgb(204, 204, 204);
+    transition: 0.5s;
+    &:hover{
+        transform: scale(1.05);
+    }
+    >img{
+        height: 29vh;
+        width: 24vw;
+    }
+    >h2{
+        font-size: 2.5vh;
+        margin: 0.6vh 0.9vw;
+    }
+    >div{
+        display: flex;
+        align-items: center;
+        margin: 0.6vh 0.9vw;
+        >svg{
+            font-size: 1.5rem;
+        }
+        >span{
+            font-size: 1.5rem;
+            margin: 0 5px;
+            color: rgb(71, 71, 71);           
+        }
+    }
+}
