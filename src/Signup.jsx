@@ -14,9 +14,9 @@ export default function Signin() {
         <p className="mb-12 font-mono text-md">
           Invest in Future
         </p>
-        <form className="flex flex-col space-y-2" action="#" method="get">
-          <input className="py-2 ps-3 rounded focus:outline-none" onChange={(e) => setEmail(e.target.value)} placeholder="Enter Email" type="text" required />
-          <input className="py-2 ps-3 rounded focus:outline-none" onChange={(e) => setPassword(e.target.value)} placeholder="Enter your Password" type="password" required />
+        <form className="flex flex-col space-y-2">
+          <input className="py-2 ps-3 rounded focus:outline-none" placeholder="Enter Email" type="text" required />
+          <input className="py-2 ps-3 rounded focus:outline-none" placeholder="Enter your Password" type="password" required />
           <button type="submit" className="py-1 px-3 hover:text-white hover:bg-black ease-in-out border border-black rounded">
             Login
           </button>
