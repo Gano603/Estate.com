@@ -32,26 +32,59 @@
     padding: 0 2vw;
     border: 1px solid black;
     border-radius: 25px;
-    display: flex;
     >div{
-        width: 50%;
+        display: flex;
         >div{
-            margin: 4vh 0;
-            >h2{
-                margin-bottom: 1.6vh;
-                font-weight: 600;
+            width: 50%;
+            >.personal-content-box{
+                margin: 3vh 2vw;
+                padding: 3vh 8vw 6vh 2vw;
+                border-radius: 25px;
+                border: 1px solid black;
+                width: max-content;
+                height: max-content;
+                >h2{
+                    font-size: 1.6vw;
+                    text-decoration: underline;
+                }
+                >div{
+                    >h2{
+                        margin-bottom: 1.6vh;
+                        font-weight: 600;
+                    }
+                }
+            }
+            >.feature-selection{
+                margin: 3vh 2vw;
+                padding: 3vh 0 6vh 2vw;
+                border-radius: 25px;
+                border: 1px solid black;
+                >h2{
+                    font-size: 1.6vw;
+                    text-decoration: underline;
+                }
+                >p{
+                    font-size: 1vw;
+                    color: rgb(88, 88, 88);
+                }
             }
             >div{
-                >button{
-                    margin: 1.1vh 0.5vw;
-                    font-size: 1.1vw;
-                    padding: 0.5vh 0.8vw;
-                    border-radius: 15px;
-                    background-color: white;
-                    transition: 0.5s;
-                    cursor: pointer;
-                    &:focus{
-                        border-color: rgb(247, 107, 107);
+                >h2{
+                    margin-bottom: 1.6vh;
+                    font-weight: 600;
+                }
+                >div{
+                    >button{
+                        margin: 1.1vh 0.5vw;
+                        font-size: 1.1vw;
+                        padding: 0.5vh 0.8vw;
+                        border-radius: 15px;
+                        background-color: white;
+                        transition: 0.5s;
+                        cursor: pointer;
+                        &:focus{
+                            border-color: rgb(247, 107, 107);
+                        }
                     }
                 }
             }
@@ -90,9 +123,9 @@
 
 .input-pkr{
     color: rgb(252, 0, 42);
-    font-size: 1.4vw;
+    font-size: 1.3vw;
     font-weight: 500;
-    margin-right: 20px;
+    margin: auto 0.4vw;
 }
 
 .file-input{
@@ -113,15 +146,26 @@
     }
 }
 
-.personal-content-box{
-    margin: 3vh 2vw;
-    padding: 3vh 2vw;
-    border-radius: 25px;
-    border: 1px solid black;
-    width: max-content;
-    height: max-content;
-    >h2{
-        font-size: 1.6vw;
-        text-decoration: underline;
+.first-col{
+    margin: 4vh 0;
+    >div{
+        margin: 3vh 0;
     }
+}
+
+.second-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.publish-button{
+    background-color: rgb(247, 107, 107);
+    padding: 1vh 1.5vw;
+    font-size: 1.2vw;
+    font-weight: 700;
+    border-radius: 20px;
+    border: 3px solid black;
+    cursor: pointer;
+    margin: 0 0 4vh auto;
+
 }
