@@ -2,10 +2,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import './styles/Signup.scss'
 import { useState } from 'react';
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import { BiErrorAlt } from 'react-icons/bi';
+import { useNavigate } from 'react-router-dom';
 
 export default function Signin() {
+
+  const nav = useNavigate();
 
   const [email , setemail] = useState("");
   const [password , setpassword] = useState("");
@@ -14,24 +17,22 @@ export default function Signin() {
   const [contact , setcontact] = useState("");
   const [register , setregister] = useState(false);
 
-  const mode_change = () =>{
-      setregister(!register);
-  }
-
   const submitHandler = () =>{
     if(password !== cpassword){
+      console.log("Not Match")
       toast(<span className='toast-notification'>
       <BiErrorAlt /> Passwords do not Match
     </span>,{
       duration:4000,
       position:'top-right',
     })
-    return;
   }
+  else nav('/')
     }
 
   return (
     <div className="login-container">
+      <Toaster />
   <div className="login-icon">
     <FontAwesomeIcon icon={faUser} size="3x" />
   </div>
@@ -77,20 +78,14 @@ export default function Signin() {
         placeholder="Confirm Password"
         value={cpassword}
         onChange={(e)=>setcpassword(e.target.value)}
-        type="text"
+        type="password"
         required
       />}
 
-      <p className='login-to-register'>Not registered? <span onClick={mode_change}>Register</span> now</p>
+      <p className='login-to-register'>Not registered? <span onClick={()=>setregister(!register)}>Register</span> now</p>
 
-      <button
-        type="submit"
-        className="login-button"
-        onClick={submitHandler}
-      >
-        {register? "Register":"Login"}
-      </button>
     </form>
+      <button className="login-button" onClick={submitHandler}>{register? "Register":"Login"}</button>
   </div>
 </div>
   )
