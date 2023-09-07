@@ -2,79 +2,94 @@
 //     border: 1px solid red;
 // }
 
-.title-poster{
+.title-poster {
     background-color: rgb(247, 107, 107);
     color: white;
     margin: 2vh 6vw;
     padding: 0 2vw;
     border-radius: 25px;
     display: flex;
-    >div{
-        >h1{
+
+    >div {
+        >h1 {
             font-size: 2.8vw;
             margin: 10vh 0 1vh 0;
         }
-        >p{
+
+        >p {
             font-size: 1.2vw;
         }
-        >img{
+
+        >img {
             width: 15vw;
             height: 40vh;
         }
-        &:nth-child(odd){
+
+        &:nth-child(odd) {
             width: 85%;
         }
     }
 }
 
-.content-box{
+.content-box {
     margin: 2vh 6vw;
     padding: 0 2vw;
     border: 1px solid black;
     border-radius: 25px;
-    >div{
+    overflow: hidden;
+
+    >div {
         display: flex;
-        >div{
+
+        >div {
             width: 50%;
-            >.personal-content-box{
+
+            >.personal-content-box {
                 margin: 3vh 2vw;
                 padding: 3vh 8vw 6vh 2vw;
                 border-radius: 25px;
                 border: 1px solid black;
                 width: max-content;
                 height: max-content;
-                >h2{
+
+                >h2 {
                     font-size: 1.6vw;
                     text-decoration: underline;
                 }
-                >div{
-                    >h2{
+
+                >div {
+                    >h2 {
                         margin-bottom: 1.6vh;
                         font-weight: 600;
                     }
                 }
             }
-            >.feature-selection{
+
+            >.feature-selection {
                 margin: 3vh 2vw;
                 padding: 3vh 0 6vh 2vw;
                 border-radius: 25px;
                 border: 1px solid black;
-                >h2{
+
+                >h2 {
                     font-size: 1.6vw;
                     text-decoration: underline;
                 }
-                >p{
+
+                >p {
                     font-size: 1vw;
                     color: rgb(88, 88, 88);
                 }
             }
-            >div{
-                >h2{
+
+            >div {
+                >h2 {
                     margin-bottom: 1.6vh;
                     font-weight: 600;
                 }
-                >div{
-                    >button{
+
+                >div {
+                    >button {
                         margin: 1.1vh 0.5vw;
                         font-size: 1.1vw;
                         padding: 0.5vh 0.8vw;
@@ -82,7 +97,8 @@
                         background-color: white;
                         transition: 0.5s;
                         cursor: pointer;
-                        &:focus{
+
+                        &:focus {
                             border-color: rgb(247, 107, 107);
                         }
                     }
@@ -92,7 +108,7 @@
     }
 }
 
-.input-div{
+.input-div {
     height: 5.5vh;
     width: 27vw;
     background-color: rgb(231, 230, 230);
@@ -100,7 +116,9 @@
     align-items: center;
     border: 1px solid black;
     border-radius: 10px;
-    >input{
+    overflow: hidden;
+
+    >input {
         height: calc(inherit-2px);
         width: 100%;
         background-color: inherit;
@@ -110,25 +128,26 @@
         font-weight: 500;
         padding: 0.1vh 0.6vw;
     }
-    >svg{
+
+    >svg {
         font-size: 1.4vw;
         color: gray;
         margin: 0 0.5vw;
     }
 }
 
-.off{
+.off {
     display: none;
 }
 
-.input-pkr{
+.input-pkr {
     color: rgb(252, 0, 42);
     font-size: 1.3vw;
     font-weight: 500;
     margin: auto 0.4vw;
 }
 
-.file-input{
+.file-input {
     background-color: rgb(231, 230, 230);
     border: 1px solid black;
     display: flex;
@@ -137,28 +156,32 @@
     align-items: center;
     width: 24vw;
     padding: 5vh 0;
-    >h2{
+    cursor: pointer;
+
+    >h2 {
         font-size: 1.6vw;
     }
-    >svg{
+
+    >svg {
         font-size: 4vw;
         fill: rgb(252, 0, 42);
     }
 }
 
-.first-col{
+.first-col {
     margin: 4vh 0;
-    >div{
+
+    >div {
         margin: 3vh 0;
     }
 }
 
-.second-col{
+.second-col {
     display: flex;
     flex-direction: column;
 }
 
-.publish-button{
+.publish-button {
     background-color: rgb(247, 107, 107);
     padding: 1vh 1.5vw;
     font-size: 1.2vw;
@@ -167,5 +190,51 @@
     border: 3px solid black;
     cursor: pointer;
     margin: 0 0 4vh auto;
+    &:active{
+        background-color: black;
+        color: white;
+    }
+}
 
+// .Drag-feature{
+//     background-color: rgba(170, 170, 170, 0.4);
+//     position: relative;
+//     left: 0;
+//     top: 0;
+//     width: inherit;
+//     height: inherit;
+//     z-index: 4; 
+//         >h2{
+//             font-size: 2.4rem;
+//             color: gray;
+//         }
+// }
+
+.file-tab {
+    >div {
+        >svg {
+            border: 1px solid gray;
+            background-color: rgb(218, 218, 218);
+            width: 70%;
+            padding: 1vh 1vw;
+            margin: 1vh 0;
+            color: rgb(80, 80, 80);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        >div {
+            border: 1px solid gray;
+            width: 70%;
+            padding: 1vh 1vw;
+            margin: 1vh 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            >svg {
+                font-size: 1.2rem;
+                cursor: pointer;
+            }
+        }
+    }
 }

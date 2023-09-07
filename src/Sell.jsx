@@ -1,25 +1,19 @@
 import './styles/Sell.scss'
-import { ImSearch } from 'react-icons/im'
-import { PiUploadSimpleBold } from 'react-icons/pi'
+// import { HiOutlineClipboardCopy } from 'react-icons/hi'
 import CheckboxList from './components/Checkbox'
+import { useEffect, useState } from 'react'
+import ImageHandler from './components/ImageHandler'
+import { Content_number_input, Content_text_input } from './components/Sell_tabs'
 
-const Content_text_input = ({ title, place_title, search, pkr }) => {
-  return (
-    <div>
-      <h2>{title}</h2>
-      <div className='input-div'><ImSearch className={search ? '' : 'off'} /><input type="text" placeholder={place_title} /><span className={pkr ? 'input-pkr' : 'off'}>PKR</span></div>
-    </div>
-  )
-}
+// const Drag_feature = ({setdrag}) => {
+//   return(
+//     <div className='Drag-feature' onDragLeave={()=>setdrag(false)}>
+//       <h2>Drop your Images</h2>
+//     </div>
+//   )
+// }
 
-const Content_number_input = ({ title, type }) => {
-  return (
-    <div>
-      <h2>{title}</h2>
-      <div className='input-div'><span className='input-pkr'>{type}</span><input type="number" /></div>
-    </div>
-  )
-}
+
 
 const Sell = () => {
 
@@ -37,8 +31,33 @@ const Sell = () => {
     'Smart Home Technology',
   ];
 
+  const [files, setfiles] = useState([]);
+  const [decodefiles , setdecodefiles] = useState([]);
+  
+  const submitHandler = () => {
+    const promises = files.map((index) => {
+      return new Promise((resolve) => {
+        const reader = new FileReader();
+        //creates a new filereader and then uses the reader.readasdataURL, onload it will execute the following function
+        reader.onload = () => {
+          const base64ImageData = reader.result;
+          resolve(base64ImageData);
+        };
+        reader.readAsDataURL(index);
+      });
+    });
+  
+    Promise.all(promises)
+      .then((resolved_data) => {
+        setdecodefiles(resolved_data); // Update the state with decoded images
+      })
+      .catch((err) => console.log("Error:", err));
+  };
+
+// useEffect(()=> console.log(decodefiles),[decodefiles])
+
   return (
-    <>
+    <div>
       <div className='title-poster'>
         <div>
           <h1>Upload your Property Details</h1>
@@ -48,7 +67,7 @@ const Sell = () => {
           <img src="/src/assets/img/For sale-bro.png" alt="For Sale Logo" />
         </div>
       </div>
-      <div className='content-box'>
+      <div className='content-box' >
         <div>
           <div className='first-col'>
             <div>
@@ -65,13 +84,7 @@ const Sell = () => {
             <Content_text_input title={"What is the asking price?"} place_title={"0"} pkr={true} />
             <Content_number_input title={"How many Bedrooms?"} type={"Beds"} />
             <Content_number_input title={"How many Baths?"} type={"Baths"} />
-            <div>
-              <h2>Upload images of your property</h2>
-              <div className='file-input'>
-                <PiUploadSimpleBold />
-                <h2>Upload your image</h2>
-              </div>
-            </div>
+          <ImageHandler files={files} setfiles={setfiles} />
           </div>
           <div className='second-col'>
             <div className='personal-content-box'>
@@ -86,9 +99,9 @@ const Sell = () => {
             </div>
           </div>
         </div>
-        <div><button className='publish-button'>PUBLISH</button></div>
+        <div><button onClick={submitHandler} className='publish-button'>PUBLISH</button></div>
       </div>
-    </>
+    </div>
   )
 }
 

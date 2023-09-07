@@ -3,18 +3,28 @@ import AdDisplay from '../Buy'
 import Sell from '../Sell.jsx'
 import { Link, useNavigate } from 'react-router-dom'
 import { AiOutlineMenu } from 'react-icons/ai'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Menu_display from './Menu_display'
+import axios from 'axios'
 
 const Navbar = () => {
 
   const nav = useNavigate();
   const [MenuisOpen, setMenuisOpen] = useState(false);
+  const [isLogin, setisLogin] = useState(false);
 
-  const menu_open = () => {
-    if (MenuisOpen) setMenuisOpen(false);
-    else setMenuisOpen(true);
-  }
+  useEffect(() => {
+    const api_Url = "https://property-website-mxfacjsp5-gano603.vercel.app/";
+    axios.get(api_Url + "user/getuser")
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+  
+  
 
   return (
     <>
@@ -32,7 +42,7 @@ const Navbar = () => {
         </div>
         <div>
           <button className='responsive-off-700px' onClick={() => nav('/signin')}>SIGN IN</button>
-          <AiOutlineMenu onClick={menu_open} className='menu-icon responsive-on-700px' />
+          <AiOutlineMenu onClick={()=> setMenuisOpen(!MenuisOpen)} className='menu-icon responsive-on-700px' />
         </div>
       </div>
       {MenuisOpen && <Menu_display />}
